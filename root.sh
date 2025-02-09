@@ -14,7 +14,7 @@ KERNEL_PATH=/opt/google/vms/android
 
 # for x86_64, the latest version does not work
 KSU_VER='v0.8.1'
-KERNEL_VER='5.10.209'
+KERNEL_VER='6.13.2'
 ARCH="`arch`"
 
 if [[ "$ARCH" =~ "aarch64" ]];then
@@ -76,7 +76,6 @@ cd /tmp
 echo '[+] Downloading kernel...'
 echo "${KSU_VER}/kernel-ARCVM-${ARCH}-${KERNEL_VER}.zip"
 curl -L -'#' "https://github.com/tiann/KernelSU/releases/download/${KSU_VER}/kernel-ARCVM-${ARCH}-${KERNEL_VER}.zip" -o ksu.zip
-
 echo '[+] Decompressing kernel...'
 mkdir -p ksu
 mount-zip ksu.zip ksu
